@@ -1,20 +1,40 @@
-export const Statistics = ({ options, total, positivePercentage }) => {
+export const Statistics = ({
+  good,
+  neutral,
+  bad,
+  total,
+  positivePercentage,
+}) => {
   return (
     <ul>
-      {options.map(option => {
-        return (
-          <li key={option[0]}>
-            <p>
-              {option[0]}: {option[1]}
-            </p>
-          </li>
-        );
-      })}
-      <li key="total">
-        <p>total: {total}</p>
+      <li>
+        <p>
+          Good:
+          <span> {good}</span>
+        </p>
       </li>
-      <li key="positivePercentage">
-        <p>Positive feedback: {positivePercentage}%</p>
+      <li>
+        <p>
+          Neutral:
+          <span> {neutral}</span>
+        </p>
+      </li>
+      <li>
+        <p>
+          Bad:
+          <span> {bad}</span>
+        </p>
+      </li>
+      <li>
+        <p>
+          total: <span> {total}</span>
+        </p>
+      </li>
+      <li>
+        <p>
+          Positive feedback:
+          <span> {positivePercentage}%</span>
+        </p>
       </li>
     </ul>
   );
